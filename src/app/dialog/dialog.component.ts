@@ -62,6 +62,8 @@ export class DialogComponent implements OnInit {
       })
       .catch((error) => console.log("Error al consumir api de empresas: " + error));
 
+      this.dialogRef.close();
+      
       return
     }
 
