@@ -1,0 +1,59 @@
+<div mat-dialog-title>
+    <div>
+        <h1>Agregar Empresa</h1>
+        <h3>Llena los campos con los datos de tu empresa</h3>
+    </div>
+    <div>
+        <button mat-raised-button color="warn"
+        (click)="close()">Cancelar</button>
+        <button style="margin-left: 5px;" 
+        mat-raised-button color="primary" 
+        (click)="guardarEmpresa()">Guardar</button>
+    </div>
+</div>
+<div mat-dialog-content>
+
+    <form [formGroup]="empresa">
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre Comercial</mat-label>
+        <input matInput placeholder="nombre de mi exmpresa" formControlName="nombre_comercial" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="margin-left: 20px;">
+        <mat-label>Razon Social</mat-label>
+        <input matInput placeholder="razon social" formControlName="razon_social" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Teléfono</mat-label>
+        <input matInput placeholder="+502 12345678" formControlName="telefono" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="margin-left: 20px;">
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="correo" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>NIT</mat-label>
+        <input matInput placeholder="12345678-4" formControlName="nit" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="margin-left: 20px;">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="estado" formControlName="estado" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 80%;">
+        <mat-label>Direccion</mat-label >
+        <input matInput placeholder="direccion" formControlName="direccion" required>
+        <mat-error >{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    </form>
+</div>
